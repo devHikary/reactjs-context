@@ -20,11 +20,8 @@ export function Login() {
     saldo,
     setSaldo
   } = useContext(UsuarioContext)
-
-  function salvarDados(evento){
-    evento.preventDefault();
-    console.log({nome, saldo})
-  }
+  
+  const history= useHistory();
 
   return (
     <Container >
@@ -64,7 +61,7 @@ export function Login() {
         variant="contained"
         color="primary"
         onClick ={
-          salvarDados
+          () => history.push('/feira')
         }
       >
         Avançar
