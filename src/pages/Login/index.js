@@ -10,7 +10,7 @@ import {
   InputAdornment 
 } from '@material-ui/core';
 
-function Login() {
+export function Login() {
   return (
     <Container>
       <Titulo>
@@ -46,5 +46,3 @@ function Login() {
     </Container>
   )
 };
-
-export default Login;

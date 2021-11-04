@@ -5,10 +5,11 @@ import {
 } from './styles';
 import feira from './feira.json';
 import Produto from 'components/Produto';
-import NavBar from './NavBar';
+import { NavBar } from './NavBar';
 
 
-function Feira() {
+
+export function Feira() {
   return (
     <Container>
       <NavBar />
@@ -33,5 +34,3 @@ function Feira() {
     </Container>
   )
 }
-
-export default Feira;

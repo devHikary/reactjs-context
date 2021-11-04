@@ -3,7 +3,7 @@ import MuiAlert from '@material-ui/lab/Alert';
 import { useState } from 'react';
 import { Container, Voltar, TotalContainer, PagamentoContainer} from './styles';
 
-function Carrinho() {
+export function Carrinho() {
   const [openSnackbar, setOpenSnackbar] = useState(false);
   return (
     <Container>
@@ -57,5 +57,3 @@ function Carrinho() {
     </Container>
   )
 }
-
-export default Carrinho;
