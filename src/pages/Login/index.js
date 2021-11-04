@@ -9,10 +9,25 @@ import {
   InputLabel,
   InputAdornment 
 } from '@material-ui/core';
+import { useContext, useState } from 'react';
+import { UsuarioContext } from 'contexts/Usuario';
+import { useHistory } from 'react-router';
 
 export function Login() {
+  const {
+    nome,
+    setNome,
+    saldo,
+    setSaldo
+  } = useContext(UsuarioContext)
+
+  function salvarDados(evento){
+    evento.preventDefault();
+    console.log({nome, saldo})
+  }
+
   return (
-    <Container>
+    <Container >
       <Titulo>
         Insira o seu nome
       </Titulo>
@@ -22,6 +37,10 @@ export function Login() {
         </InputLabel>
         <Input
           type="text"
+          value={nome}
+          onChange={
+            event => setNome(event.target.value)
+          }
         />
       </InputContainer>
       <InputContainer>
@@ -30,6 +49,10 @@ export function Login() {
         </InputLabel>
         <Input
         type="number"
+        value={saldo}
+          onChange={
+            event => setSaldo(Number(event.target.value))
+          }
         startAdornment={
           <InputAdornment position="start">
             R$
@@ -40,6 +63,9 @@ export function Login() {
       <Button
         variant="contained"
         color="primary"
+        onClick ={
+          salvarDados
+        }
       >
         Avançar
       </Button>
